@@ -12,4 +12,4 @@ If you use our work, please attribute it to the "Trauma Video Review Collaborati
 
 ## Contact
 
-For any inquiries, please contact us at [your-email@example.com].
+For any inquiries, please contact us at [TVRcollaborative@proton.me].
