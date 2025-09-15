@@ -57,10 +57,71 @@
         </ul>
     </section>
 
+   <section id="submit-query">
+  <h2>Submit Your Query</h2>
+  <p><em>Encountered a technical or logical issue with data entry? Please fill in the form and we will be in touch.</em></p>
+
+  <form id="tvr-form" action="https://formspree.io/f/mandzeye" method="POST">
+    <label for="fullName">Your full name:</label><br>
+    <input type="text" id="fullName" name="full_name" required><br><br>
+
+    <label for="org">Your organization:</label><br>
+    <input type="text" id="org" name="organization"><br><br>
+
+    <label for="email">Your email address:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="issue">Use this space to report the issues you have encountered with TVRC data entry process. Please be specific and reference the specific variable and the issue in as much detail as possible. TVRC will address this either via a quick update or discuss it during the annual meeting.</label><br>
+    <textarea id="issue" name="issue_details" rows="8" required></textarea><br><br>
+
+    <!-- Optional: helps you identify the form in Formspree Inbox -->
+    <input type="hidden" name="form_name" value="TVRC Data Entry Issue Report">
+
+    <!-- Optional spam protection: Honeypot field -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Submit</button>
+
+    <!-- Inline success/error messages (used by the optional JS below) -->
+    <p id="tvr-success" style="display:none;margin-top:10px;">Thanks — your report was sent.</p>
+    <p id="tvr-error" style="display:none;margin-top:10px;">Hmm, something went wrong. Please try again.</p>
+  </form>
+</section>
+
+    
     <section>
         <h2>About</h2>
         <p>Welcome to the Trauma Video Review Collaborative.<br> Here you can find templates and resources for trauma video review. Please feel free to download and use the templates provided.<br>Our email address: <a href="mailto:TVRCollaborative@proton.me">TVRCollaborative@proton.me </a> </p>
         
     </section>
+    <script>
+  const form = document.getElementById('tvr-form');
+  const okMsg = document.getElementById('tvr-success');
+  const errMsg = document.getElementById('tvr-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    okMsg.style.display = 'none';
+    errMsg.style.display = 'none';
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        okMsg.style.display = 'block';
+      } else {
+        errMsg.style.display = 'block';
+      }
+    } catch {
+      errMsg.style.display = 'block';
+    }
+  });
+</script>
+
 </body>
 </html>
