@@ -4,127 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trauma Video Review Collaborative</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        img.header-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/raw/main/header.jpg" alt="Header Image" class="header-image">
-        <h1>Trauma Video Review Collaborative</h1>
-    </header>
 
-    <section>
-        <h2>Date Dictionary and Definitions</h2>
-        <ul>
-            <li><a href="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/blob/main/TVR%20Definitions%2009202025.xlsx" download>Microsoft Excel Data Dictionary & Definitions v1</a></li>
-            <li><a href="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/blob/main/TVRCRegistryMultisite_DataDictionary_2025-09-20.csv" download>REDCap Data Dictionary & Definitions v1</a></li>
-        </ul>
-        </ul>
-    </section>
+    <div class="container">
+        <header>
+            <img src="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/raw/main/header.jpg" alt="Trauma team in an operating room" class="header-image">
+            <h1>Trauma Video Review Collaborative</h1>
+        </header>
 
-    <section>
-   <section id="submit-query">
-  <h2>Submit Your Query</h2>
-  <p><em>Encountered a technical or logical issue with data entry? Please fill in the form and we will be in touch.</em></p>
+        <main>
+            <section id="about">
+                <h2>About TVRC</h2>
+                <p>
+                    Welcome to the Trauma Video Review Collaborative. Here you can find templates and resources for trauma video review.
+                    Please feel free to download and use the templates provided. You can also search and directly import the TVRC Data Dictionary in REDCap using the instrument search function.
+                </p>
+                <p>
+                    For general inquiries, contact us at: <a href="mailto:TVRCollaborative@proton.me">TVRCollaborative@proton.me</a>
+                </p>
+            </section>
 
-  <form id="tvr-form" action="https://formspree.io/f/mandzeye" method="POST">
-    <label for="fullName">Your full name:</label><br>
-    <input type="text" id="fullName" name="full_name" required><br><br>
+            <section id="resources">
+                <h2>Data Dictionary and Definitions</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/blob/main/TVR%20Definitions%2009202025.xlsx?raw=true" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon"><path d="M4 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8 14.5a1.5 1.5 0 0 0 1.5-1.5v-4.38l1.72 1.72a1.5 1.5 0 0 0 2.12-2.12l-4.24-4.24a1.5 1.5 0 0 0-2.12 0L7.14 9.22a1.5 1.5 0 0 0 2.12 2.12l1.74-1.74v4.38A1.5 1.5 0 0 0 12 17.5z"/></svg>
+                            <span>Microsoft Excel Data Dictionary & Definitions v1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/blob/main/TVRCRegistryMultisite_DataDictionary_2025-09-20.csv?raw=true" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon"><path d="M4 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm8 14.5a1.5 1.5 0 0 0 1.5-1.5v-4.38l1.72 1.72a1.5 1.5 0 0 0 2.12-2.12l-4.24-4.24a1.5 1.5 0 0 0-2.12 0L7.14 9.22a1.5 1.5 0 0 0 2.12 2.12l1.74-1.74v4.38A1.5 1.5 0 0 0 12 17.5z"/></svg>
+                            <span>REDCap Data Dictionary & Definitions v1</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-    <label for="org">Your organization:</label><br>
-    <input type="text" id="org" name="organization"><br><br>
+            <section id="submit-query">
+                <h2>Submit a Data Entry Query</h2>
+                <p><em>Encountered a technical or logical issue with the data entry process? Please fill in the form below and we will be in touch.</em></p>
 
-    <label for="email">Your email address:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+                <form id="tvr-form" action="https://formspree.io/f/mandzeye" method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Your full name:</label>
+                        <input type="text" id="fullName" name="full_name" required>
+                    </div>
 
-    <label for="issue">Use this space to report the issues you have encountered with TVRC data entry process. Please be specific and reference the specific variable and the issue in as much detail as possible. TVRC will address this either via a quick update or discuss it during the annual meeting.</label><br>
-    <textarea id="issue" name="issue_details" rows="8" required></textarea><br><br>
+                    <div class="form-group">
+                        <label for="org">Your organization:</label>
+                        <input type="text" id="org" name="organization">
+                    </div>
 
-    <!-- Optional: helps you identify the form in Formspree Inbox -->
-    <input type="hidden" name="form_name" value="TVRC Data Entry Issue Report">
+                    <div class="form-group">
+                        <label for="email">Your email address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-    <!-- Optional spam protection: Honeypot field -->
-    <input type="text" name="_gotcha" style="display:none">
+                    <div class="form-group">
+                        <label for="issue">Describe the issue you have encountered. Please be specific and reference the variable and issue in as much detail as possible.</label>
+                        <textarea id="issue" name="issue_details" rows="6" required></textarea>
+                    </div>
 
-    <button type="submit">Submit</button>
+                    <input type="hidden" name="form_name" value="TVRC Data Entry Issue Report">
+                    <input type="text" name="_gotcha" style="display:none">
 
-    <!-- Inline success/error messages (used by the optional JS below) -->
-    <p id="tvr-success" style="display:none;margin-top:10px;">Thanks — your report was sent.</p>
-    <p id="tvr-error" style="display:none;margin-top:10px;">Hmm, something went wrong. Please try again.</p>
-  </form>
-</section>
+                    <button type="submit">Submit Query</button>
 
-    
-    <section>
-        <h2>About</h2>
-        <p>Welcome to the Trauma Video Review Collaborative.<br> Here you can find templates and resources for trauma video review.<br> <br>Please feel free to download and use the templates provided. You can also search and directly import TVRC Data Dictionary in REDCap using instrument search function.<br>Our email address: <a href="mailto:TVRCollaborative@proton.me">TVRCollaborative@proton.me </a> </p>
-       
-    </section>
-    <script>
-  const form = document.getElementById('tvr-form');
-  const okMsg = document.getElementById('tvr-success');
-  const errMsg = document.getElementById('tvr-error');
+                    <p id="tvr-status" class="form-status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    okMsg.style.display = 'none';
-    errMsg.style.display = 'none';
+        <footer>
+            <p>© 2024 Trauma Video Review Collaborative. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.reset();
-        okMsg.style.display = 'block';
-      } else {
-        errMsg.style.display = 'block';
-      }
-    } catch {
-      errMsg.style.display = 'block';
-    }
-  });
-</script>
-
+    <!-- Link to the external JavaScript file, 'defer' ensures it runs after the page is parsed -->
+    <script defer src="script.js"></script>
 </body>
 </html>
