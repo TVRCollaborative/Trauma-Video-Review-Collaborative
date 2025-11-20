@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Submission - TVRC</title>
+    <!-- We can reuse your main style.css and add form-specific styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-style.css"> 
+</head>
+<body>
+    <div class="form-container">
+        <header>
+            <img src="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/raw/main/header.jpg" alt="Header Image" class="header-image">
+            <h1>Trauma Center Data Submission</h1>
+        </header>
+
+        <main>
+            <p>Please fill out all fields for your site's annual submission. <a href="index.html">Return to homepage</a>.</p>
+
+            <!-- THIS FORM'S ACTION URL WILL COME FROM ZAPIER IN THE NEXT STEP -->
+            <form action="YOUR_ZAPIER_WEBHOOK_URL_HERE" method="POST">
+
+                <div class="form-row">
+                    <label for="trauma-center-name">Trauma center name</label>
+                    <input type="text" id="trauma-center-name" name="Trauma Center Name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="calendar-year">Calendar Year</label>
+                    <input type="number" id="calendar-year" name="Calendar Year" placeholder="YYYY" required min="2020" max="2099">
+                </div>
+                
+                <hr class="divider">
+
+                <div class="form-row highlight">
+                    <label>Trauma Center Verification Level</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="Trauma Level" value="I" required> I</label>
+                        <label><input type="radio" name="Trauma Level" value="II"> II</label>
+                        <label><input type="radio" name="Trauma Level" value="III"> III</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="patient-visits">Annual hospital patient visits</label>
+                    <div>
+                        <input type="number" id="patient-visits" name="Annual patient visits">
+                        <small>Number of patients</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="trauma-volume">Annual trauma volume</label>
+                    <div>
+                        <input type="number" id="trauma-volume" name="Annual trauma volume">
+                        <small>Number of patients</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="level-one-activations">Annual level one activations</label>
+                    <div>
+                        <input type="number" id="level-one-activations" name="Annual level one activations">
+                        <small>Number of activations</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="location">Location</label>
+                    <div>
+                        <input type="text" id="location" name="Location">
+                        <small>City/State/Country</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label>Urbanicity</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="Urbanicity" value="Rural"> Rural</label>
+                        <label><input type="radio" name="Urbanicity" value="Suburban"> Suburban</label>
+                        <label><input type="radio" name="Urbanicity" value="Urban"> Urban</label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="median-age">Median age of trauma patients</label>
+                    <div>
+                        <input type="number" id="median-age" name="Median age">
+                        <small>Years</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="iss-score">Median Injury Severity Score</label>
+                    <div>
+                        <input type="number" id="iss-score" name="Median ISS" min="1" max="75">
+                        <small>1-75</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="ais-score">Median Abbreviated Injury Scale</label>
+                    <div>
+                        <input type="number" id="ais-score" name="Median AIS" min="1" max="6">
+                        <small>1-6</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="mortality">Median in-hospital mortality</label>
+                    <div>
+                        <input type="number" step="0.1" id="mortality" name="Median mortality">
+                        <small>Percentage</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="female">Female</label>
+                    <div>
+                        <input type="number" step="0.1" id="female" name="Female percentage">
+                        <small>Percentage</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="penetrating">Penetrating Mechanism</label>
+                    <div>
+                        <input type="number" step="0.1" id="penetrating" name="Penetrating Mechanism percentage">
+                        <small>Percentage</small>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit Data</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
