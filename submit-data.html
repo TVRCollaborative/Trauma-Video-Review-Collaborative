@@ -17,7 +17,8 @@
         <main>
             <p>Please fill out all fields for your site's annual submission. <a href="index.html">Return to homepage</a>.</p>
 
-            <form action="https://hooks.zapier.com/hooks/catch/25443667/uzr10mk/" method="POST">
+            <!-- CHANGE 1: ADD AN ID TO THE FORM TAG -->
+            <form id="data-submission-form" action="https://hooks.zapier.com/hooks/catch/25443667/uzr10mk/" method="POST">
 
                 <div class="form-row">
                     <label for="trauma-center-name">Trauma center name</label>
@@ -29,12 +30,10 @@
                     <input type="number" id="calendar-year" name="Calendar Year" placeholder="YYYY" required min="2020" max="2099">
                 </div>
                 
-                <!-- START: NEW EMAIL FIELD -->
                 <div class="form-row">
                     <label for="submitter-email">Your Email Address</label>
                     <input type="email" id="submitter-email" name="Submitter Email" placeholder="you@example.com" required>
                 </div>
-                <!-- END: NEW EMAIL FIELD -->
                 
                 <hr class="divider">
 
@@ -47,7 +46,6 @@
                     </div>
                 </div>
 
-                <!-- ... (The rest of your form fields are unchanged) ... -->
                 <div class="form-row">
                     <label for="patient-visits">Annual hospital patient visits</label>
                     <div>
@@ -143,5 +141,9 @@
             </form>
         </main>
     </div>
+
+    <!-- CHANGE 2: ADD THIS SCRIPT TAG AT THE VERY END OF THE BODY -->
+    <script src="form-handler.js"></script>
+
 </body>
 </html>
