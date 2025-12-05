@@ -17,17 +17,12 @@
         <main>
             <p>Please fill out all fields for your site's annual submission. <a href="index.html">Return to homepage</a>.</p>
 
-            <!-- CHANGE 1: The form action now points to FormSubmit with your email. The old ID is removed. -->
             <form action="https://formsubmit.co/TVRCollaborative@proton.me" method="POST">
 
-                <!-- CHANGE 2: This hidden input provides the "Thank You" page redirect. -->
-                <!-- IMPORTANT: Please double-check that this is the correct FULL URL to your thank-you page. -->
-                <input type="hidden" name="_next" value="https://tvrcaborative.github.io/Trauma-Video-Review-Collaborative/thank-you.html">
+                <input type="hidden" name="_next" value="https://tvrcollaborative.github.io/Trauma-Video-Review-Collaborative/thank-you.html">
 
-                <!-- CHANGE 3: This optional field disables the CAPTCHA for a smoother experience. -->
                 <input type="hidden" name="_captcha" value="false">
 
-                <!-- The rest of your form fields are unchanged. -->
                 <div class="form-row">
                     <label for="trauma-center-name">Trauma center name</label>
                     <input type="text" id="trauma-center-name" name="Trauma Center Name" required>
@@ -54,38 +49,23 @@
                     </div>
                 </div>
 
+                <!-- ...The rest of your form fields... -->
                 <div class="form-row">
                     <label for="patient-visits">Annual hospital patient visits</label>
-                    <div>
-                        <input type="number" id="patient-visits" name="Annual patient visits">
-                        <small>Number of patients</small>
-                    </div>
+                    <div><input type="number" id="patient-visits" name="Annual patient visits"><small>Number of patients</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="trauma-volume">Annual trauma volume</label>
-                    <div>
-                        <input type="number" id="trauma-volume" name="Annual trauma volume">
-                        <small>Number of patients</small>
-                    </div>
+                    <div><input type="number" id="trauma-volume" name="Annual trauma volume"><small>Number of patients</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="level-one-activations">Annual level one activations</label>
-                    <div>
-                        <input type="number" id="level-one-activations" name="Annual level one activations">
-                        <small>Number of activations</small>
-                    </div>
+                    <div><input type="number" id="level-one-activations" name="Annual level one activations"><small>Number of activations</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="location">Location</label>
-                    <div>
-                        <input type="text" id="location" name="Location">
-                        <small>City/State/Country</small>
-                    </div>
+                    <div><input type="text" id="location" name="Location"><small>City/State/Country</small></div>
                 </div>
-
                 <div class="form-row">
                     <label>Urbanicity</label>
                     <div class="radio-group">
@@ -94,53 +74,29 @@
                         <label><input type="radio" name="Urbanicity" value="Urban"> Urban</label>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <label for="median-age">Median age of trauma patients</label>
-                    <div>
-                        <input type="number" id="median-age" name="Median age">
-                        <small>Years</small>
-                    </div>
+                    <div><input type="number" id="median-age" name="Median age"><small>Years</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="iss-score">Median Injury Severity Score</label>
-                    <div>
-                        <input type="number" id="iss-score" name="Median ISS" min="1" max="75">
-                        <small>1-75</small>
-                    </div>
+                    <div><input type="number" id="iss-score" name="Median ISS" min="1" max="75"><small>1-75</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="ais-score">Median Abbreviated Injury Scale</label>
-                    <div>
-                        <input type="number" id="ais-score" name="Median AIS" min="1" max="6">
-                        <small>1-6</small>
-                    </div>
+                    <div><input type="number" id="ais-score" name="Median AIS" min="1" max="6"><small>1-6</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="mortality">Median in-hospital mortality</label>
-                    <div>
-                        <input type="number" step="0.1" id="mortality" name="Median mortality">
-                        <small>Percentage</small>
-                    </div>
+                    <div><input type="number" step="0.1" id="mortality" name="Median mortality"><small>Percentage</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="female">Female</label>
-                    <div>
-                        <input type="number" step="0.1" id="female" name="Female percentage">
-                        <small>Percentage</small>
-                    </div>
+                    <div><input type="number" step="0.1" id="female" name="Female percentage"><small>Percentage</small></div>
                 </div>
-
                 <div class="form-row">
                     <label for="penetrating">Penetrating Mechanism</label>
-                    <div>
-                        <input type="number" step="0.1" id="penetrating" name="Penetrating Mechanism percentage">
-                        <small>Percentage</small>
-                    </div>
+                    <div><input type="number" step="0.1" id="penetrating" name="Penetrating Mechanism percentage"><small>Percentage</small></div>
                 </div>
 
                 <div class="button-group">
@@ -149,9 +105,6 @@
             </form>
         </main>
     </div>
-
-    <!-- The JavaScript file is no longer needed and the script tag has been removed. -->
-    <!-- You can safely delete form-handler.js from your project. -->
 
 </body>
 </html>
