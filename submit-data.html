@@ -17,9 +17,17 @@
         <main>
             <p>Please fill out all fields for your site's annual submission. <a href="index.html">Return to homepage</a>.</p>
 
-            <!-- CHANGE 1: ADD AN ID TO THE FORM TAG -->
-            <form id="data-submission-form" action="https://hooks.zapier.com/hooks/catch/25443667/uzr10mk/" method="POST">
+            <!-- CHANGE 1: The form action now points to FormSubmit with your email. The old ID is removed. -->
+            <form action="https://formsubmit.co/TVRCollaborative@proton.me" method="POST">
 
+                <!-- CHANGE 2: This hidden input provides the "Thank You" page redirect. -->
+                <!-- IMPORTANT: Please double-check that this is the correct FULL URL to your thank-you page. -->
+                <input type="hidden" name="_next" value="https://tvrcaborative.github.io/Trauma-Video-Review-Collaborative/thank-you.html">
+
+                <!-- CHANGE 3: This optional field disables the CAPTCHA for a smoother experience. -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- The rest of your form fields are unchanged. -->
                 <div class="form-row">
                     <label for="trauma-center-name">Trauma center name</label>
                     <input type="text" id="trauma-center-name" name="Trauma Center Name" required>
@@ -142,8 +150,8 @@
         </main>
     </div>
 
-    <!-- CHANGE 2: ADD THIS SCRIPT TAG AT THE VERY END OF THE BODY -->
-    <script src="form-handler.js"></script>
+    <!-- The JavaScript file is no longer needed and the script tag has been removed. -->
+    <!-- You can safely delete form-handler.js from your project. -->
 
 </body>
 </html>
