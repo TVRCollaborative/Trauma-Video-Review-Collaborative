@@ -1,6 +1,7 @@
-// Wait for the entire HTML document to be loaded and parsed
-document.addEventListener('DOMContentLoaded', function() {
+// form-handler.js
 
+// Wait for the entire HTML document to be loaded and parsed
+document.addEventListener('DOMContentLoaded', function () {
     // Find our specific form on the page by its ID
     const form = document.getElementById('data-submission-form');
 
@@ -9,26 +10,29 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Your Make.com webhook URL
+    const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/eoijt737rjs6shtjpfbbc4mhjm19t2c5';
+
     // Add an event listener to run our code when the form is submitted
-    form.addEventListener('submit', async function(event) {
-        
+    form.addEventListener('submit', async function (event) {
         // 1. Prevent the browser's default behavior of navigating away
         event.preventDefault();
 
         const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        
-        // Give the user visual feedback that something is happening
-        submitButton.disabled = true;
-        submitButton.textContent = 'Submitting...';
+        const originalButtonText = submitButton ? submitButton.textContent : '';
 
-        // 2. Grab the form data and the Zapier URL
+        // Give the user visual feedback that something is happening
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+        }
+
+        // 2. Grab the form data
         const formData = new FormData(form);
-        const actionUrl = form.action;
 
         try {
-            // 3. Send the form data to the Zapier webhook in the background
-            const response = await fetch(actionUrl, {
+            // 3. Send the form data to the Make webhook in the background
+            const response = await fetch(MAKE_WEBHOOK_URL, {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -36,22 +40,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Check if Zapier received the data successfully (HTTP status 2xx)
+            // Check if Make received the data successfully (HTTP status 2xx)
             if (response.ok) {
                 // 4. If successful, redirect the user to the thank you page
                 window.location.href = 'thank-you.html';
             } else {
-                // If Zapier returns an error, alert the user
+                // If Make returns an error, alert the user
                 alert('There was a problem with the submission. Please try again.');
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
             }
         } catch (error) {
             // If a network error occurs (e.g., no internet), alert the user
             console.error('Submission failed:', error);
             alert('A network error occurred. Please check your connection and try again.');
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         }
     });
 });
