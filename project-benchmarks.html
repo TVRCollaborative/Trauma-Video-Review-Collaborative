@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ongoing Project – Trauma Resuscitation Benchmarks (TVRC)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+  <div class="form-container">
+    <header>
+      <img src="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/raw/main/header.jpg"
+           alt="Header Image"
+           class="header-image">
+      <h1>Ongoing Project</h1>
+      <h2 style="margin-top: 0.25em;">
+        Benchmarking Trauma Resuscitation Performance in Hypotensive Penetrating Injury
+      </h2>
+    </header>
+
+    <main>
+      <p><a href="index.html">← Return to homepage</a></p>
+
+      <h3>Brief description</h3>
+      <p>
+        While the “golden hour” and the “platinum 10 minutes” have been described in the literature,
+        standardized benchmarks for high-quality trauma resuscitation remain undefined—particularly
+        for critically injured hypotensive patients with penetrating torso injuries.
+      </p>
+
+      <p>
+        This project leverages Trauma Video Review (TVR) to define normative performance metrics,
+        establish benchmarks, and correlate variability in trauma resuscitation processes with
+        patient outcomes. Video review of hypotensive (&lt;90 mmHg), penetrating trauma patients
+        with non-compressible torso hemorrhage will be used to capture the timing and sequencing of
+        key interventions, including patient arrival, handoff, vascular access, FAST examination,
+        adherence to ATLS principles, procedure timing, and trauma bay disposition.
+      </p>
+
+      <h3>Project leadership</h3>
+      <ul>
+        <li><strong>Primary Institution:</strong> UT Southwestern</li>
+        <li>
+          <strong>PIs:</strong>
+          <ul>
+            <li>Michael Johnston, MD — <a href="mailto:Michael.Johnston@UTSouthwestern.edu">Michael.Johnston@UTSouthwestern.edu</a></li>
+            <li>Ryan Dumas, MD — <a href="mailto:Ryan.Dumas@bcm.edu">Ryan.Dumas@bcm.edu</a></li>
+            <li>Emma Burke, MD — <a href="mailto:Emma.burke@bcm.edu">Emma.burke@bcm.edu</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <hr class="divider">
+
+      <h3>Express interest / Intake form</h3>
+      <p><strong>If you are interested in participating, please complete the form below.</strong></p>
+
+      <!-- Replace webhook URL after creating Make scenario -->
+      <form class="project-intake-form"
+            action="PASTE_PROJECT_2_WEBHOOK_URL"
+            data-webhook="PASTE_PROJECT_2_WEBHOOK_URL"
+            method="POST">
+
+        <input type="hidden"
+               name="Project Name"
+               value="Benchmarking Trauma Resuscitation Performance in Hypotensive Penetrating Injury">
+
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="Your name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Your email address</label>
+          <input type="email" id="email" name="Your email address" required>
+        </div>
+
+        <div class="form-row">
+          <label for="center">Your trauma center name</label>
+          <input type="text" id="center" name="Your trauma center name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="location">Your location</label>
+          <input type="text" id="location" name="Your location" required>
+        </div>
+
+        <div class="form-row">
+          <label for="level">Your ACS Trauma Verification Level</label>
+          <input type="text"
+                 id="level"
+                 name="Your ACS Trauma Verification Level"
+                 placeholder="I / II / III"
+                 required>
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Submit Interest</button>
+        </div>
+
+      </form>
+    </main>
+  </div>
+
+  <script src="form-handler.js"></script>
+</body>
+</html>
