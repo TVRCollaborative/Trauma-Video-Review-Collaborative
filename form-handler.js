@@ -1,65 +1,113 @@
 // form-handler.js
-
-// Wait for the entire HTML document to be loaded and parsed
 document.addEventListener('DOMContentLoaded', function () {
-    // Find our specific form on the page by its ID
+
+  /***********************
+   * 1) Annual site data submission form (existing)
+   ***********************/
+  (function setupAnnualSubmissionForm() {
     const form = document.getElementById('data-submission-form');
+    if (!form) return;
 
-    // If the form doesn't exist on this page, do nothing.
-    if (!form) {
-        return;
-    }
-
-    // Your Make.com webhook URL
+    // Your existing Make webhook for the annual submission form
     const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/eoijt737rjs6shtjpfbbc4mhjm19t2c5';
 
-    // Add an event listener to run our code when the form is submitted
     form.addEventListener('submit', async function (event) {
-        // 1. Prevent the browser's default behavior of navigating away
+      event.preventDefault();
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(MAKE_WEBHOOK_URL, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          window.location.href = 'thank-you.html';
+        } else {
+          alert('There was a problem with the submission. Please try again.');
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        }
+      } catch (error) {
+        console.error('Submission failed:', error);
+        alert('A network error occurred. Please check your connection and try again.');
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
+    });
+  })();
+
+
+  /***********************
+   * 2) Project intake forms (new)
+   *    - Add class="project-intake-form"
+   *    - Add data-webhook="https://hook.us2.make.com/...."
+   ***********************/
+  (function setupProjectIntakeForms() {
+    const projectForms = document.querySelectorAll('form.project-intake-form');
+    if (!projectForms.length) return;
+
+    projectForms.forEach((form) => {
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
+
+        const webhookUrl = form.getAttribute('data-webhook');
+
+        if (!webhookUrl || webhookUrl.trim() === '' || webhookUrl.includes('PASTE_')) {
+          alert('This form is not configured yet (missing Make webhook URL). Please contact TVRC.');
+          return;
+        }
 
         const submitButton = form.querySelector('button[type="submit"]');
         const originalButtonText = submitButton ? submitButton.textContent : '';
 
-        // Give the user visual feedback that something is happening
         if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
+          submitButton.disabled = true;
+          submitButton.textContent = 'Submitting...';
         }
 
-        // 2. Grab the form data
         const formData = new FormData(form);
 
         try {
-            // 3. Send the form data to the Make webhook in the background
-            const response = await fetch(MAKE_WEBHOOK_URL, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
 
-            // Check if Make received the data successfully (HTTP status 2xx)
-            if (response.ok) {
-                // 4. If successful, redirect the user to the thank you page
-                window.location.href = 'thank-you.html';
-            } else {
-                // If Make returns an error, alert the user
-                alert('There was a problem with the submission. Please try again.');
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalButtonText;
-                }
-            }
-        } catch (error) {
-            // If a network error occurs (e.g., no internet), alert the user
-            console.error('Submission failed:', error);
-            alert('A network error occurred. Please check your connection and try again.');
+          if (response.ok) {
+            window.location.href = 'project-thank-you.html';
+          } else {
+            alert('There was a problem with the submission. Please try again.');
             if (submitButton) {
-                submitButton.disabled = false;
-                submitButton.textContent = originalButtonText;
+              submitButton.disabled = false;
+              submitButton.textContent = originalButtonText;
             }
+          }
+        } catch (error) {
+          console.error('Project intake submission failed:', error);
+          alert('A network error occurred. Please check your connection and try again.');
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
         }
+      });
     });
+  })();
+
 });
