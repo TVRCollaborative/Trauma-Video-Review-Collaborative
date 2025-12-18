@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ongoing Project – TDABC of Trauma (TVRC)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+  <div class="form-container">
+    <header>
+      <img src="https://github.com/TVRCollaborative/Trauma-Video-Review-Collaborative/raw/main/header.jpg"
+           alt="Header Image"
+           class="header-image">
+      <h1>Ongoing Project</h1>
+      <h2 style="margin-top: 0.25em;">Time-Driven Activity-Based Costing of Trauma</h2>
+    </header>
+
+    <main>
+      <p><a href="index.html">← Return to homepage</a></p>
+
+      <h3>Brief description</h3>
+      <p>
+        This project applies Time-Driven Activity-Based Costing (TDABC) methods to category one trauma activations,
+        utilizing TVR to precisely quantify direct labor, direct non-labor, and indirect costs across the course of
+        trauma resuscitations and in-hospital care. TVR enables accurate measurement of which personnel are involved,
+        how long they participate, and what resources—such as medications, blood products, IV fluids, central lines,
+        and other supplies—are used during a resuscitation. By pairing video-derived time and resource data with salary
+        information, item-level supply costs, and CMS-reported departmental overhead, the project aims to define true
+        episode-of-care costs and identify system and process changes that can reduce expenses while improving efficiency.
+      </p>
+
+      <h3>Project leadership</h3>
+      <ul>
+        <li><strong>Primary Institution:</strong> The University of Texas at Austin Dell Medical School</li>
+        <li>
+          <strong>Point of Contact:</strong> Karyssa Nelson, MS3 Research Distinction Student (Department of Acute Care Surgery) —
+          <a href="mailto:kmn2564@eid.utexas.edu">kmn2564@eid.utexas.edu</a> / 817-687-9980
+        </li>
+        <li>
+          <strong>PI:</strong> Dr. Carlos VR Brown, MD, FACS — Professor, Department of Surgery and Perioperative Care;
+          Program Director, General Surgery Residency; Chief, Division of Acute Care Surgery
+        </li>
+      </ul>
+
+      <hr class="divider">
+
+      <h3>Express interest / Intake form</h3>
+      <p><strong>If you are interested in participating, please complete the form below.</strong></p>
+
+      <!-- IMPORTANT:
+           Replace the data-webhook URL with the Make.com webhook for THIS project scenario. -->
+      <form class="project-intake-form"
+            data-webhook="PASTE_YOUR_MAKE_WEBHOOK_URL_HERE"
+            method="POST">
+
+        <!-- Optional hidden field so Make can tag the project name -->
+        <input type="hidden" name="Project Name" value="Time-Driven Activity-Based Costing of Trauma">
+
+        <div class="form-row">
+          <label for="your-name">Your name</label>
+          <input type="text" id="your-name" name="Your name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="your-email">Your email address</label>
+          <input type="email" id="your-email" name="Your email address" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="center-name">Your trauma center name</label>
+          <input type="text" id="center-name" name="Your trauma center name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="location">Your location</label>
+          <input type="text" id="location" name="Your location" placeholder="City / State / Country" required>
+        </div>
+<div class="form-row">
+          <label for="level">Your Trauma Verification Level</label>
+          <input type="text" id="level" name="Your ACS Trauma Verificiation Level" placeholder="I / II / III" required>
+</div>
+        <div class="button-group">
+          <button type="submit">Submit Interest</button>
+        </div>
+
+      </form>
+
+    </main>
+  </div>
+
+  <script src="project-form-handler.js"></script>
+</body>
+</html>
