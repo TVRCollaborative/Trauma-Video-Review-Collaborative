@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
           });
 
           if (response.ok) {
-            window.location.href = 'project-thank-you.html';
+            window.location.href = 'thank-you.html';
           } else {
             alert('There was a problem with the submission. Please try again.');
             if (submitButton) {
