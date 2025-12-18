@@ -51,9 +51,11 @@
 
       <!-- IMPORTANT:
            Replace the data-webhook URL with the Make.com webhook for THIS project scenario. -->
-      <form class="project-intake-form"
-            data-webhook="https://hook.us2.make.com/3cq3a8xrpfoa731hu5ksq3gu7xwdt7sj"
-            method="POST">
+     <form class="project-intake-form"
+      action="https://hook.us2.make.com/3cq3a8xrpfoa731hu5ksq3gu7xwdt7sj"
+      data-webhook="https://hook.us2.make.com/3cq3a8xrpfoa731hu5ksq3gu7xwdt7sj"
+      method="POST">
+
 
         <!-- Optional hidden field so Make can tag the project name -->
         <input type="hidden" name="Project Name" value="Time-Driven Activity-Based Costing of Trauma">
@@ -90,6 +92,6 @@
     </main>
   </div>
 
-  <script src="project-form-handler.js"></script>
+ <script src="form-handler.js"></script>
 </body>
 </html>
